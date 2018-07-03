@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 Class Base extends CI_Controller {
 
   public function __construct() {
