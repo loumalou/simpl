@@ -2,7 +2,7 @@
 
 session_start();
 
-Class Utils_Auth extends CI_Controller {
+Class Base extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
@@ -50,7 +50,7 @@ Class Utils_Auth extends CI_Controller {
   public function login_proc() {
 
     $this->form_validation->set_rules('username', 'Username', 'trim|required');
-    $this->form_validation->set_rules('password', 'Password' 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
     if ($this->form_validation->run() == FALSE) {
       if(isset($this->session->userdata['logged_in'])){
@@ -82,7 +82,7 @@ Class Utils_Auth extends CI_Controller {
     $data == array(
       'error_message' => 'Mauvais Utilisateur/MDP'
     );
-    $this->load->view('login' $data);
+    $this->load->view('login', $data);
   }
 }
 }
@@ -95,8 +95,8 @@ Class Utils_Auth extends CI_Controller {
       'username' => ''
     );
     $this->session->unset_userdata('logged_in', $sess_array);
-    $data['message_display'] = 'Vous etes deconnecter!'
-    $this->load->view('login' $data);
+    $data['message_display'] = 'Vous etes deconnecter!';
+    $this->load->view('login', $data);
   }
 
 }

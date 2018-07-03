@@ -2,7 +2,7 @@
 <?php
 if (isset($this->session->userdata['logged_in'])) {
 
-  header("location: http://localhost/login/index.php/utils_auth/login_proc");
+  header("location: http://ad4b593e0818313846bfa237a2dc6704.simplementlinux.com/index.php/utils_auth/login_proc");
 }
 ?>
     <head>
@@ -30,7 +30,7 @@ if (isset($this->session->userdata['logged_in'])) {
         <div id="login">
           <h2> Connection </h2>
         <hr/>
-        <?php echo form_open('utils_auth/login_proc'); ?>
+        <?php echo form_open('base/login_proc'); ?>
         <?php
         echo "<div class='error_msg'>";
         if (isset($error_message)) {
@@ -44,10 +44,9 @@ if (isset($this->session->userdata['logged_in'])) {
         <label>MDP: </label>
         <input type="password" name="password" id="password" placeholder="**********"/><br /><br />
         <input type="submit" value=" Connection " name="submit"/><br />
-        <a href="<?php echo base_url() ?>index.php/utils_auth/reg_utils">Cliquer ici pour cree un compte</a>
+        <a href="<?php echo base_url() ?>index.php/base/reg_utils">Cliquer ici pour cree un compte</a>
         <?php echo form_close(); ?>
       </div>
     </div>
   </body>
   </html>
-  
